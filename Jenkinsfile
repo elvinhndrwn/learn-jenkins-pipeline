@@ -2,9 +2,11 @@ pipeline{
     agent any
 
     stages{
-        stage('Test'){
+        stage('Build'){
             steps{
-                sh 'nohup ./mvnw clean install'
+                withMaven(maven: 'maven_3_8_5') {
+                   bat 'mvn clean install'
+                }
             }
         }
     }
