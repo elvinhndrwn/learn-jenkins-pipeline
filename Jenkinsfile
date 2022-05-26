@@ -4,9 +4,7 @@ pipeline{
     stages{
         stage('Test'){
             steps{
-                sh """
-                    mvc clean install
-                    """
+                sh 'nohup ./mvnw clean install'
             }
         }
     }
