@@ -1,8 +1,9 @@
 pipeline{
     agent any
-    tools{
-        tool name: 'maven_3_8_5', type: 'maven'
-    }
+    tools {
+            jdk 'openjdk-1.8'
+            maven 'Maven_3_5_2'
+        }
 
     stages{
         stage('Compile'){
